@@ -39,6 +39,8 @@ input_df = pd.DataFrame([input_data])
 
 # Make predictions
 if st.sidebar.button("Predict"):
+    if input_df is None:
+        st.error("Input data")
     pred=model1.predict(input_df)[0]
     pred=pred>0.5
 
