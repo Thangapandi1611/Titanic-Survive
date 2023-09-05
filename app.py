@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import keras
 
 # Load the trained model
-model_path = "model/titanic.pkl"
-with open(model_path, "rb") as model_file:
-    model1 = pickle.load(model_file)
+model1 = keras.models.load_model('model/titanic.h5')
+
 
 # Streamlit UI
 st.title("Titanic Survival Prediction")
